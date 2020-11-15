@@ -1,0 +1,466 @@
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
+  }
+
+  body{
+      background: #f8f9fa;
+      font-family: Google Sans;
+  }
+
+
+  body.dark{
+    background-color: #202123;
+    color: #fff;
+  }
+
+  body.dark .svg2{
+    background: #f8f9fa;
+  }
+  
+  
+  body.dark nav {
+    background-color: #26a69a;
+  }
+  body.dark .card {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  body.dark .btn {
+    background-color: #ee6f73;
+  }
+  body.dark .divider {
+    opacity: 0.2;
+  }
+  body.dark .sidenav {
+    background-color: #2d2d31;
+  }
+  body.dark .sidenav li a:not(.subheader) {
+    color: #89b2f5;
+  }
+  body.dark .sidenav li a:not(.subheader):hover {
+    background-color: #3b4043;
+  }
+  body.dark .sidenav li a.subheader {
+    color: #9aa0a6;
+  }
+  body.dark .sidenav li a .material-icons {
+    color: #9aa0a6;
+  }
+  body.dark .collection {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  body.dark .collection .collection-item {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  body.dark .modal {
+    background-color: #222;
+  }
+  
+  body.dark .modal .modal-footer {
+    background-color: #222;
+  }
+
+  body.dark .swal2-modal{
+    background-color: #152238;
+    color: #fff;
+  }
+
+  body.dark .problemName{
+    color :#fff ;
+  }
+
+  body.dark .solver{
+    color :#fff ;
+  }
+
+  body.dark .top-head{
+    background-color: #192841;
+  }
+
+  body.dark .topThree{
+    background-color: #192841;
+  }
+
+  body.dark .all{
+    background-color: #192841;
+  }
+
+  .top-head{
+    box-shadow: 0 2px 8px rgba(0,0,0,.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 60px;
+    /* text-align: center; */
+    /* position: relative; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+
+
+  .top-head .user-top-info .avatar{
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    z-index: 99;
+
+  }
+
+
+  .top-head .user-top-info .avatar img{
+    height: 52px;
+    width: 50px;
+  }
+
+  .user-top-info{
+    position: relative;
+    cursor: pointer;
+    /* width: 100%; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+  }
+
+  .user-top-info .username{
+    /* position: absolute; */
+    /* top: 0;
+    left: 12%;
+    top: 13%; */
+    font-size: 15px;
+    
+  }
+
+ .ratingChanged{
+    /* position: absolute; */
+    /* top: 50%;
+    left: 12%; */
+    font-weight: bold;
+    color: var(--danger);
+    /* margin-left: 10px; */
+  }
+
+
+  .profile-modal .avatar{
+    height: 70px;
+    width: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-modal .avatar img{
+    height: 70px;
+    width: 70px;
+  }
+
+  .toggle-dl{
+    position: fixed;
+    z-index: 99;
+    right: 5%;
+    top: 2%;
+  }
+
+  .login{
+    position: absolute;
+    left: 0;
+    top: 20%;
+    left: 2%;
+  }
+
+
+  .body{
+    margin-top: 75px;
+   }
+
+  .countDown{
+    text-align: center;
+  }
+
+  .countDown .contestName{
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .num{
+    color: var(--danger);
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .rg{
+    font-size: 17px;
+  }
+
+  .float-menu{
+    position: fixed;
+    left: 5%;
+    bottom: 5%;
+  }
+
+  .contestCount{
+    position: absolute;
+    background-color: var(--danger);
+    color: #fff;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    top: 0;
+    right: -10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .float-menu .content1{
+    box-shadow: 0px 2px 5px rgba(0,0,0,.5);
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .float-menu img{
+    height: 30px;
+  }
+
+  .modal{
+    /* max-height: 100%; */
+    min-height: 90%;
+    width: 97%;
+    top: 5% !important;
+  }
+
+  .problemName{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  .solver{
+    padding: 10px;
+  }
+ 
+  .ttl{
+    text-align: left;
+  }
+
+  .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-top: 250px;
+  }
+
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  
+  .problem-loading{
+   background: rgba(0,0,0,.5);
+   position: fixed;
+   height: 100%;
+   width: 100%;
+   z-index: 100;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   display: none;
+  }
+
+  @media screen and (min-width: 780px) {
+   .topThree{
+     margin-right: 80px;
+     height: 300px;
+   }
+
+   .all{
+    margin-right: 80px;
+   }
+  }
+
+  .flex-item2{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .topThree{
+    /* margin-right: 80px; */
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.5);
+    border-radius: 10px;
+    width: 450px;
+    margin-bottom: 20px;
+  }
+
+  .all{
+    /* margin-right: 80px; */
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.5);
+    border-radius: 10px;
+    width: 450px;
+  }
+
+
+  .item{
+   display: flex;
+   padding: 5px;
+   margin-bottom: 5px;
+   box-shadow: 0 2px 4px rgba(0,0,0,.2);
+   border-radius: 5px;
+  }
+
+  .item .avatar{
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  .item .avatar img{
+    height: 50px;
+    width: 50px;
+  }
+
+  .card-title{
+    font-size: 20px;
+    padding: 5px;
+  }
+  
+
+  .lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+  
