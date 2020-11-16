@@ -233,7 +233,7 @@
 
   .float-menu{
     position: fixed;
-    left: 5%;
+    right: 5%;
     bottom: 5%;
   }
 
@@ -340,7 +340,7 @@
    display: none;
   }
 
-  @media screen and (min-width: 780px) {
+  /* @media screen and (min-width: 780px) {
    .topThree{
      margin-right: 80px;
      height: 300px;
@@ -349,7 +349,7 @@
    .all{
     margin-right: 80px;
    }
-  }
+  } */
 
   .flex-item2{
     display: flex;
