@@ -31,7 +31,7 @@ var monthNum = {
   '12':'Dec'
 }
 
-console.log(colorPlatte['newbie'])
+//console.log(colorPlatte['newbie'])
 
 $('.login').click(function(){
   var temp = '';
@@ -107,7 +107,7 @@ if(localStorage.getItem('handle') === null){
         }, 5000);
       }
 
-      console.log(res.result[0]);
+      //console.log(res.result[0]);
       $('.user-top-info .avatar').css('border', '3px solid '+colorPlatte[res.result[0].rank]);
       $('.user-top-info .avatar').html(`<img src="https:${res.result[0].avatar}" />`);
       $('.username').html(`<span style="color: ${colorPlatte[res.result[0].rank]};">${res.result[0].handle}<b>(<span class="Count">${res.result[0].rating}</span>)</b></span>`);
@@ -118,8 +118,8 @@ if(localStorage.getItem('handle') === null){
      $(function(){
        $.get('https://codeforces.com/api/user.rating?handle='+localStorage.getItem('handle'), function(){})
        .done(function(data){
-          console.log(data);
-          console.log(data.result[data.result.length-1])
+         // console.log(data);
+          //console.log(data.result[data.result.length-1])
           totalContests = data.result.length-1;
           const lastRating = data.result[data.result.length-1];
           lastContestInfo = lastRating;

@@ -49,8 +49,9 @@ $(function(){
 $(".time").html(`(${timeContainer})`);
  var endTime = dateTimeSet(contests[found].end_time);
  remaining = endTime.date + " " + endTime.time;
- // console.log(remaining);
-   // dateTimeSet(contests[0].end_time);
+ 
+var contestId = contests[found].url.split('/');
+ contestId = contestId[contestId.length-1];
 
  });
 });

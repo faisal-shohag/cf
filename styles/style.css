@@ -121,6 +121,7 @@
     width: 100%;
     top: 0;
     height: 60px;
+    background: #fff;
     /* text-align: center; */
     /* position: relative; */
     display: flex;
@@ -275,6 +276,13 @@
     top: 5% !important;
   }
 
+  .updateModal{
+    max-height: 10%;
+    min-height: 23%;
+    width: 97%;
+    top: 30% !important;
+  }
+
   .problemName{
     font-size: 20px;
     font-weight: bold;
@@ -383,6 +391,7 @@
    margin-bottom: 5px;
    box-shadow: 0 2px 4px rgba(0,0,0,.2);
    border-radius: 5px;
+   cursor: pointer;
   }
 
   .item .avatar{
@@ -464,3 +473,38 @@
     }
   }
   
+  .ratingStatus{
+    font-size: 15px;
+    border: 2px solid var(--danger);
+    padding: 10px;
+    animation: ratingStatus 2s infinite;
+    border-radius: 10px;
+    transition: 2s;
+  }
+
+  @keyframes ratingStatus{
+    0%{
+      border: 2px solid var(--warning);
+      box-shadow: 0 2px 8px var(--warning);
+    }
+    100%{
+      border: 2px solid var(--danger);
+      box-shadow: 0 2px 8px var(--danger);
+    }
+  }
+
+  .topThree #contestName{
+    font-weight: bold;
+    text-align: center;
+    color: var(--primary);
+    margin-top: 10px;
+    font-size: 15px;
+  }
+
+  .update-menu{
+    display: flex;
+  }
+
+  .update{
+    margin-right: 10px;
+  }
