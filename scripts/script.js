@@ -118,16 +118,19 @@ if(localStorage.getItem('handle') === null){
      $(function(){
        $.get('https://codeforces.com/api/user.rating?handle='+localStorage.getItem('handle'), function(){})
        .done(function(data){
-         // console.log(data);
+         console.log(data);
           //console.log(data.result[data.result.length-1])
           totalContests = data.result.length-1;
           const lastRating = data.result[data.result.length-1];
           lastContestInfo = lastRating;
           var d = new Date(lastRating.ratingUpdateTimeSeconds*1000)
+          console.log(d);
+          d = d.toString().split(' ');
+          let date = d[2], month = d[1], year = d[3];
         if(lastRating.newRating - lastRating.oldRating < 0){
-          $('.ratingChanged').html(`<span style="color: red;">${lastRating.newRating - lastRating.oldRating}</span> <span style="color: gray; font-size: 10px;">(${d.getDate()} ${monthNum[d.getMonth()]} ${d.getFullYear()})</span>`);
+          $('.ratingChanged').html(`<span style="color: red;">${lastRating.newRating - lastRating.oldRating}</span> <span style="color: gray; font-size: 10px;">(${date + ' ' + month +' '+ year})</span>`);
         }else{
-          $('.ratingChanged').html(`<span style="color: var(--success);">+${lastRating.newRating - lastRating.oldRating}</span> <span style="color: gray; font-size: 10px;">(${d.getDate()} ${monthNum[d.getMonth()]} ${d.getFullYear()})</span>`);
+          $('.ratingChanged').html(`<span style="color: var(--success);">+${lastRating.newRating - lastRating.oldRating}</span> <span style="color: gray; font-size: 10px;">(${date + ' ' + month +' '+ year})</span>`);
         }
           
        })
@@ -218,11 +221,13 @@ $('.prblm-sg').click(function(){
        $('.problem-loading').hide();
        //console.log(data);
         var solvers = (data[data.length-1][1].solvers).join(',');
+        var cat = (data[data.length-1][1].link).split('/');
+            cat = cat[cat.length-1];
        Swal.fire({
         html: `
         <div class="toggle-sg" style="float: right; color: var(--primary);"></div>
         <div class="ttl">Problem for you!</div>
-        <div class="problemName">${data[data.length-1][0]}</div>
+        <div class="problemName">${cat}. ${data[data.length-1][0]}</div>
         <a target="blank" href="${data[data.length-1][1].link}"><div class="btn green">Try It!</div></a>
         <div class="solver">Solvers(${data[data.length-1][1].solvers.length}):<br/>
         ${solvers}
@@ -264,5 +269,8 @@ $('.prblm-sg').click(function(){
    })
 })
 
+
+
+//update profile pic when user log in
 
 

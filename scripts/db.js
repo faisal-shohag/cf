@@ -126,8 +126,8 @@ $(function () {
       var nextContest;
       for (i = 0; i < 20; ++i) {
 if (data[i].phase === 'FINISHED' && (data[i].name.includes('Codeforces Round') || data[i].name.includes('Educational Codeforces Round') ||   data[i].name.includes('Codeforces Global Round'))) {
-            updateContest = data[i];
-            nextContest = data[i+1];
+            updateContest = data[i+3];
+            nextContest = data[i+4];
             break;
         }
       }
@@ -149,9 +149,9 @@ if(!updateStatus){
   $(function(){
     $.get('https://codeforces.com/api/contest.ratingChanges?contestId='+ updateContest.id, function(){})
     .done(res=>{
-      //console.log(res.result);
-      
-      if(res.result.length>1){
+      console.log(res.result);
+      console.log(updateContest.id);
+      if(res.result.length>0){
        // console.log('Rating Changes Available');
         $('#ratingStatus').html(`<div class="ratingStatus">Rating Changes available for <b style="color: var(--warning)">${updateContest.name}</b>
         <div class="update-menu"><div id="${updateContest.id}" class="update btn red">Update</div> <div class="next btn primary">Next</div></div>
@@ -253,9 +253,7 @@ db.ref('coders').on('value', snap=> {
     })
 
     if(i === usernames.length-1) {
-      //console.log('Update finished!');
       $('.updating').hide();
-      //console.log(contestData);
       if(contestData.length>1){
         db.ref('ratingChanges').set(contestData);
         $('.finishedStatus').html(`<span style="color:var(--success)">Update Completed!</span>
@@ -293,7 +291,9 @@ db.ref('ratingChanges').on('value', snap=>{
     <div class="item" id="${item.val().handle}">
         <div class="info">
           <div class="handle" style="color:${colorByRating(item.val().newRating)};">${item.val().handle}(${item.val().newRating})</div>
-          <div class="rank" style="color:"><span style="color: var(--success);">+${ratingChanges}</span> | <i>Rank: ${item.val().rank}</i></div>
+          <div class="rank" style="color:"><span class="rtc" style="color: var(--success); ">+${ratingChanges}</span>  <span class="crank">Rank: ${item.val().rank}</span>
+          <div class="cprog">From <b style="color: ${colorByRating(item.val().oldRating)}">${RankByRating(item.val().oldRating)}</b> to <b style="color: ${colorByRating(item.val().newRating)}">${RankByRating(item.val().newRating)}</b></div>
+          </div>
         </div>
       </div>
     `
@@ -303,7 +303,8 @@ db.ref('ratingChanges').on('value', snap=>{
       <div class="item"id="${item.val().handle}">
           <div class="info">
             <div class="handle" style="color:${colorByRating(item.val().newRating)};">${item.val().handle}(${item.val().newRating})</div>
-            <div class="rank"><span style="color: var(--danger);">${ratingChanges}</span> | <i>Rank: ${item.val().rank}</i></div>
+            <div class="rank"><span class="rtc" style="color: var(--danger);">${ratingChanges}</span>  <span class="crank">Rank: ${item.val().rank}</span></div>
+            <div class="cprog">From <b style="color: ${colorByRating(item.val().oldRating)}">${RankByRating(item.val().oldRating)}</b> to <b style="color: ${colorByRating(item.val().newRating)}">${RankByRating(item.val().newRating)}</b></div>
           </div>
         </div>
       `
@@ -322,9 +323,18 @@ db.ref('ratingChanges').on('value', snap=>{
 function colorByRating(rating){
 if(rating>=2200 && rating<= 2299) return 'var(--orange)';
 else if(rating>=1900 && rating<= 1899) return '#a0a';
-else if(rating>=1600 && rating<=1899) return 'var(--primary)';
+else if(rating>=1600 && rating<=2299) return 'var(--primary)';
 else if(rating>=1400 && rating<=1599) return 'rgb(3,168,158);'
 else if(rating>=1200 && rating<=1399) return 'var(--success)';
 else return 'var(--gray)';
 }
+
+function RankByRating(rating){
+  if(rating>=2200 && rating<= 2299) return 'Master';
+  else if(rating>=1900 && rating<= 2299) return '	Candidate Master';
+  else if(rating>=1600 && rating<=1899) return 'Expert';
+  else if(rating>=1400 && rating<=1599) return 'Specialist';
+  else if(rating>=1200 && rating<=1399) return 'Pupil';
+  else return 'Newbie';
+  }
 
