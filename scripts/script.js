@@ -274,7 +274,7 @@ $('.prblm-sg').click(function(){
 
 
 
-console.log(localStorage.getItem('handle'))
+//console.log(localStorage.getItem('handle'))
 //update profile pic when user log in
 //TIME_LIMIT_EXCEEDED
 //WRONG_ANSWER
@@ -285,7 +285,7 @@ if(localStorage.getItem('handle') === null) $('.me').hide();
 $(function(){
   $.get('https://codeforces.com/api/user.status?handle='+localStorage.getItem('handle'), function(){})
   .done(function(res){
-    console.log(res);
+    //console.log(res);
     $('.total_sub').html(`Total Submissions: <span class="num">${res.result.length}</span>`);
     let AC=0, WA=0, TLE=0, CE=0,RE=0,ME=0;
     let solvedTotal = new Set();
@@ -314,7 +314,7 @@ $(function(){
     })
     
     $('.solved').html(`Solved: <span class="num">${solvedTotal.size}</span>`)
-    console.log(solvedTotal.size)
+    //console.log(solvedTotal.size)
    
    $('.problemStat').html(`
    <div class="ac box1" id="ac" style="font-size: 20px; border-top: 2px solid var(--success); color:var(--success)"><span style="font-size: 12px; pading-top: -5px; padding:0;" >AC</span><br>${AC}</div>
