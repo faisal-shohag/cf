@@ -234,7 +234,7 @@ $('.prblm-sg').click(function(){
         ${solvers}
         </div>
 
-        <small>This Api from Mahmudul Alam</small>
+        <small>This API from Mahmudul Alam</small>
         
         `,
         showCancelButton: true,
