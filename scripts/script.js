@@ -286,7 +286,7 @@ $(function(){
   $.get('https://codeforces.com/api/user.status?handle='+localStorage.getItem('handle'), function(){})
   .done(function(res){
     //console.log(res);
-    $('.total_sub').html(`Total Submissions: <span class="num">${res.result.length}</span>`);
+    $('.total_sub').html(`Submissions: <span class="num">${res.result.length}</span>`);
     let AC=0, WA=0, TLE=0, CE=0,RE=0,ME=0;
     let solvedTotal = new Set();
     let ac=new Set(), wa=new Set(), tle=new Set(), ce=new Set(), re=new Set(), me= new Set();
@@ -313,7 +313,7 @@ $(function(){
       }
     })
     
-    $('.solved').html(`Solved: <span class="num">${solvedTotal.size}</span>`)
+    $('.solved').html(`<span class="num">${solvedTotal.size}</span>`)
     //console.log(solvedTotal.size)
    
    $('.problemStat').html(`
