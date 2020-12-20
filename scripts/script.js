@@ -1,4 +1,5 @@
 // console.log(localStorage.getItem('rank'));
+localStorage.setItem('mode', 'dark');
 $('.problem-loading').show();
 M.toast({html: 'Website is under maintenance!', classes: 'red'})
 // localStorage.removeItem('autoState');

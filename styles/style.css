@@ -159,12 +159,13 @@
     /* flex-wrap: wrap; */
   }
 
-  .user-top-info .username{
+ .username{
     /* position: absolute; */
     /* top: 0;
     left: 12%;
     top: 13%; */
     font-size: 15px;
+    font-weight: bold;
     
   }
 
