@@ -112,7 +112,7 @@ if(localStorage.getItem('handle') === null){
       $('.user-top-info .avatar').css('border', '3px solid '+colorPlatte[res.result[0].rank]);
       $('.user-top-info .avatar').html(`<img src="https:${res.result[0].avatar}" />`);
       $('.username').html(`<span style="color: ${colorPlatte[res.result[0].rank]};">${res.result[0].handle}<b>(<span class="Count">${res.result[0].rating}</span>)</b></span>`);
-      
+      $('.you').html(`<span style="color: ${colorPlatte[res.result[0].rank]};">You(${res.result[0].handle})</span>`)
       var lastContestInfo = {};
       var totalContests;
 
@@ -274,11 +274,114 @@ $('.prblm-sg').click(function(){
 
 
 
+console.log(localStorage.getItem('handle'))
 //update profile pic when user log in
+//TIME_LIMIT_EXCEEDED
+//WRONG_ANSWER
+//OK
+//"COMPILATION_ERROR"
+//"RUNTIME_ERROR"
+if(localStorage.getItem('handle') === null) $('.me').hide();
 $(function(){
   $.get('https://codeforces.com/api/user.status?handle='+localStorage.getItem('handle'), function(){})
   .done(function(res){
     console.log(res);
+    $('.total_sub').html(`Total Submissions: <span class="num">${res.result.length}</span>`);
+    let AC=0, WA=0, TLE=0, CE=0,RE=0,ME=0;
+    let solvedTotal = new Set();
+    let ac=new Set(), wa=new Set(), tle=new Set(), ce=new Set(), re=new Set(), me= new Set();
+    res.result.forEach(item=>{
+      if(item.verdict==="OK"){
+        solvedTotal.add(item.problem.name);
+        ac.add(item.problem);
+        AC++;
+      }else if(item.verdict==="WRONG_ANSWER"){
+        wa.add(item.problem);
+        WA++;
+      }else if(item.verdict==="TIME_LIMIT_EXCEEDED"){
+        tle.add(item.problem);
+        TLE++;
+      }else if(item.verdict==="COMPILATION_ERROR"){
+        ce.add(item.problem);
+        CE++;
+      }else if(item.verdict==="RUNTIME_ERROR"){
+        re.add(item.problem);
+        RE++;
+      }else if(item.verdict==="MEMORY_LIMIT_EXCEEDED"){
+        me.add(item.problem);
+        ME++;
+      }
+    })
+    
+    $('.solved').html(`Solved: <span class="num">${solvedTotal.size}</span>`)
+    console.log(solvedTotal.size)
+   
+   $('.problemStat').html(`
+   <div class="ac box1" id="ac" style="font-size: 20px; border-top: 2px solid var(--success); color:var(--success)"><span style="font-size: 12px; pading-top: -5px; padding:0;" >AC</span><br>${AC}</div>
+   <div class="wa box1" id="wa" style="font-size: 20px; border-top: 2px solid var(--danger); color:var(--danger)"><span style="font-size: 12px; pading-top: -5px; padding:0;">WA</span><br>${WA}</div>
+   <div class="tle box1" id="tle" style="font-size: 20px; border-top: 2px solid var(--warning); color:var(--warning)"><span style="font-size: 12px; pading-top: -5px; padding:0;">TLE</span><br>${TLE}</div>
+   <div class="ce box1" id="ce" style="font-size: 20px; border-top: 2px solid var(--pink); color:var(--pink)"><span style="font-size: 12px; pading-top: -5px; padding:0;">CE</span><br>${CE}</div>
+   <div class="mle box1" id="mle" style="font-size: 20px; border-top: 2px solid var(--info); color:var(--info)"><span style="font-size: 12px; pading-top: -5px; padding:0;">MLE</span><br>${ME}</div>
+   <div class="re box1" id="re" style="font-size: 20px; border-top: 2px solid var(--teal); color:var(--teal)"><span style="font-size: 12px; pading-top: -5px; padding:0;">RE</span><br>${RE}</div>
+   `)
+
+   $('.box1').click(function(){
+    $('.problem-loading').show();
+    $(document).ready(function(){
+      $('#myProblems').modal();
+      $('#myProblems').modal('open'); 
+   });
+   
+   let id=$(this)[0].id;
+   $('.itemTitle').html(`${id.toUpperCase()}<small>(max.100)</small>`);
+   document.querySelector('.problemsList').innerHTML='';
+   var p=0;
+   for(let prob of getDataList(id)){
+       //console.log(prob);
+       p++;
+       
+      
+       let tags = prob.tags.join(', ');
+       let link = 'https://codeforces.com/problemset/problem/'+prob.contest+'/'+prob.index;
+       let probHtml = `
+       <a target="blank" href="${link}"><div class="probItem">
+       <div class="logo" style="background: ${getColorByIndex(prob.index)}">${prob.index}</div>
+       <div class="probOt">
+       <div class="probName">${prob.index}. ${prob.name}</div>
+       <div class="tags">[${tags}]</div>
+       </div>
+       </div></a>
+       `
+    document.querySelector('.problemsList').innerHTML+=probHtml;
+    if(p===101) break;
+   }
+
+   $('.problem-loading').hide();
+   
+
+   });
+
+
+   function getDataList(dataName){
+     if(dataName==='ac') return ac;
+     else if(dataName==='wa') return wa;
+     else if(dataName==='tle') return tle;
+     else if(dataName==='ce') return ce;
+     else if(dataName==='mle') return me;
+     else if(dataName==='re') return re;
+   }
+
+
   })
 })
 
+
+function getColorByIndex(index){
+  if(index==='A') return 'var(--success)';
+  else if(index==='B') return 'rgb(3,168,158)';
+  else if (index === 'C') return 'var(--primary)';
+  else if (index === 'D') return 'var(--purple)';
+  else if (index === 'E') return 'var(--warning)';
+  else if (index === 'F') return 'var(--danger)';
+  else return 'red';
+}

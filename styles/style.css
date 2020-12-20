@@ -253,6 +253,24 @@
     font-size: 17px;
   }
 
+  .solved, .total_sub{
+    text-align: center;
+    font-size: 17px;
+  }
+
+  .box1 {
+    padding: 0 5px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    margin: 3px 3px;
+    width: 100px;
+}
+
+.problemStat{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
   .float-menu{
     position: fixed;
     right: 5%;
@@ -290,24 +308,76 @@
     height: 30px;
   }
 
-  .modal{
+  .update .modal{
     /* max-height: 100%; */
     min-height: 90%;
     width: 97%;
     top: 5% !important;
   }
 
-  .updateModal{
+ .update .updateModal{
     max-height: 10%;
     min-height: 23%;
     width: 97%;
     top: 30% !important;
   }
 
+  .myprob .modal{
+    /* max-height: 100%; */
+    min-height: 100%;
+    width: 99%;
+    top: 0% !important;
+    background: #192841 !important;
+  }
+
+
+  .problemsList a{
+    text-decoration: none;
+    color: #fff;
+  }
+  .probItem{
+    padding: 5px;
+    margin: 5px 1px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tags{
+    font-size: 10px;
+  }
+  .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+
+  }
+
+  .probOt{
+   margin-left: 10px;
+  }
+
+  .probName{
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--primary);
+  }
+
   .problemName{
     font-size: 20px;
     font-weight: bold;
     padding: 10px;
+  }
+
+  .itemTitle{
+  font-size: 18px;
+  }
+
+  .itemTitle small{
+    font-size: 10px ;
   }
 
   .solver{
