@@ -33,7 +33,7 @@ $(function(){
      var arr = dateTimeSet(contests[i].start_time);
    var html = `
    <div style=" border-radius: 3px; margin-bottom:5px; border-left: 3px solid var(--purple);">
-    <div class="countDown" style="background: none; box-shadow: 0 1px 2px rgba(0,0,0,3)">
+    <div class="countDown" style="background: #192841; box-shadow: 0 1px 2px rgba(0,0,0,3)">
     <br />
     <div class="td" style="color: var(--danger);"><span style="vertical-align: middle; font-size: 13px;" class="material-icons text-info">calendar_today</span> ${arr.date}  | <span style="vertical-align: middle; font-size: 13px;" class="material-icons text-info">schedule</span> ${arr.time} BDT</div>
     <div class="contestName">${contests[i].name}</div>

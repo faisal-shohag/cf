@@ -88,7 +88,16 @@
   
   body.dark .modal .modal-footer {
     background-color: #222;
+    color: #fff;
+    text-align: center;
   }
+
+  body.dark .modal .modal-close {
+    color: red;
+    font-weight: bold;
+  }
+
+  
 
   body.dark .swal2-modal{
     background-color: #152238;
