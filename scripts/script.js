@@ -1,7 +1,7 @@
 // console.log(localStorage.getItem('rank'));
 localStorage.setItem('mode', 'dark');
 $('.problem-loading').show();
-M.toast({html: 'Website is under maintenance!', classes: 'red'})
+M.toast({html: 'Welcome To BRUR CP!', classes: 'orange'})
 // localStorage.removeItem('autoState');
 
 $(document).ready(function(){
