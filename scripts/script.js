@@ -120,7 +120,7 @@ if(localStorage.getItem('handle') === null){
        .done(function(data){
          console.log(data);
           //console.log(data.result[data.result.length-1])
-          totalContests = data.result.length-1;
+          totalContests = data.result.length;
           const lastRating = data.result[data.result.length-1];
           lastContestInfo = lastRating;
           var d = new Date(lastRating.ratingUpdateTimeSeconds*1000)
