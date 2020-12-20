@@ -119,13 +119,13 @@ if(localStorage.getItem('handle') === null){
      $(function(){
        $.get('https://codeforces.com/api/user.rating?handle='+localStorage.getItem('handle'), function(){})
        .done(function(data){
-         console.log(data);
+         //console.log(data);
           //console.log(data.result[data.result.length-1])
           totalContests = data.result.length;
           const lastRating = data.result[data.result.length-1];
           lastContestInfo = lastRating;
           var d = new Date(lastRating.ratingUpdateTimeSeconds*1000)
-          console.log(d);
+          //console.log(d);
           d = d.toString().split(' ');
           let date = d[2], month = d[1], year = d[3];
         if(lastRating.newRating - lastRating.oldRating < 0){
@@ -275,5 +275,10 @@ $('.prblm-sg').click(function(){
 
 
 //update profile pic when user log in
-
+$(function(){
+  $.get('https://codeforces.com/api/user.status?handle='+localStorage.getItem('handle'), function(){})
+  .done(function(res){
+    console.log(res);
+  })
+})
 

@@ -126,8 +126,8 @@ $(function () {
       var nextContest;
       for (i = 0; i < 20; ++i) {
 if (data[i].phase === 'FINISHED' && (data[i].name.includes('Codeforces Round') || data[i].name.includes('Educational Codeforces Round') ||   data[i].name.includes('Codeforces Global Round'))) {
-            updateContest = data[i+3];
-            nextContest = data[i+4];
+            updateContest = data[i];
+            nextContest = data[i+1];
             break;
         }
       }
