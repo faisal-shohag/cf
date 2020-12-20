@@ -379,9 +379,19 @@ $(function(){
 function getColorByIndex(index){
   if(index==='A') return 'var(--success)';
   else if(index==='B') return 'rgb(3,168,158)';
+  else if(index==='B1') return 'rgb(3,168,158)';
+  else if(index==='B2') return 'rgb(3,168,158)';
   else if (index === 'C') return 'var(--primary)';
+  else if (index === 'C1') return 'var(--primary)';
+  else if (index === 'C2') return 'var(--primary)';
   else if (index === 'D') return 'var(--purple)';
+  else if (index === 'D1') return 'var(--purple)';
+  else if (index === 'D2') return 'var(--purple)';
   else if (index === 'E') return 'var(--warning)';
+  else if (index === 'E1') return 'var(--warning)';
+  else if (index === 'E2') return 'var(--warning)';
   else if (index === 'F') return 'var(--danger)';
+  else if (index === 'F1') return 'var(--danger)';
+  else if (index === 'F2') return 'var(--danger)';
   else return 'red';
 }
