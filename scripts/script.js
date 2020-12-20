@@ -233,6 +233,8 @@ $('.prblm-sg').click(function(){
         <div class="solver">Solvers(${data[data.length-1][1].solvers.length}):<br/>
         ${solvers}
         </div>
+
+        <small>This Api from Mahmudul Alam</small>
         
         `,
         showCancelButton: true,
