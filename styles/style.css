@@ -132,6 +132,7 @@ body.dark .all {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  z-index: 999999;
 }
 
 .top-head .user-top-info .avatar {
