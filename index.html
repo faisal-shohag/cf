@@ -1,217 +1,251 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BRUR CP</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans" as="style" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRUR CP</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans" as="style" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
+
 <body>
-
-
-
+  <!-- Toggle Dark/Light Mode -->
   <div class="toggle-dl">
     <a class="dark-toggle" href="#" title="ডার্ক/লাইট"><i class="material-icons theme-icon-status">brightness_4</i>
-        <span class="theme-status"></span></a></div>
-
-<div class="top-head">
-
-  <div class="user-top-info">
-  <div class="avatar content animate__animated animate__bounceIn"></div>
-</div>
-
-<div>
-<div class="username"></div>
-<div class="ratingChanged"></div>
-</div>
-
-<div class="login btn purple">Login</div>
-</div>
-<div class="body-items">
-
-<div class="body">
-  <!-- <div class="bNa"></div> -->
-  <div class="contestTime">
-  <div class="countDown">
-    <div class="contestName"></div>
-    <div class="startIn" id="started"><span class="text-danger num">00</span> hr <span class="text-danger num">00</span> min <span class="text-danger num">00</span> sec</div><div style="color: #fff; font-size: 13px; text-align: center; display: none;" class="time"></div>
-    <div class="startIn" id="remaining"></div>
-    <center><div class="register"></div></center>
+      <span class="theme-status"></span></a>
   </div>
-</div>
 
-<div class="contestTime">
-  <div class="card-title you"></div>
-  <center><div class="solved">...</div></center>
-  <div class="total_sub"></div>
-  <div class="problemStat">
-    <center><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></center>
+  <!-- Top Bar -->
+  <div class="top-head">
+    <div class="user-top-info">
+      <div class="avatar content animate__animated animate__bounceIn"></div>
+    </div>
+    <div>
+      <div class="username"></div>
+      <div class="LastSeen"></div>
+      <div class="ratingChanged"></div>
+    </div>
+    <div class="login btn purple">Login</div>
   </div>
-</div>
 
-<div class="flex-item2">
-    <div class="topThree">
-      <div class="card-title">Top 3</div>
-      <div class="topThrees">
-      <center><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></center>
+
+  <div class="body-items">
+    <div class="body">
+
+      <!-- Contest Time Countdown -->
+      <div class="contestTime">
+        <div class="countDown">
+          <div class="contestName"></div>
+          <div class="startIn" id="started"><span class="text-danger num">00</span> hr <span
+              class="text-danger num">00</span> min <span class="text-danger num">00</span> sec</div>
+          <div style="color: #fff; font-size: 13px; text-align: center; display: none;" class="time"></div>
+          <div class="startIn" id="remaining"></div>
+          <center>
+            <div class="register"></div>
+          </center>
+        </div>
+      </div>
+
+      <!-- User's submissions info-->
+      <div class="contestTime me">
+        <div class="card-title you"></div>
+        <center>
+          <div class="solved">...</div>
+        </center>
+        <div class="total_sub"></div>
+        <div class="problemStat">
+          <center>
+            <div class="lds-ellipsis">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </center>
+        </div>
+      </div>
+
+      <div class="flex-item2">
+        <!-- Top three users -->
+        <div class="topThree">
+          <div class="card-title">Top 3</div>
+          <div class="topThrees">
+            <center>
+              <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </center>
+          </div>
+        </div>
+        <!-- Rating Changes -->
+        <div class="all">
+          <div class="card-title">Rating Changes</div>
+          <div id="ratingStatus"></div>
+          <div id="contestName"></div>
+          <div class="ratingChanges">
+          </div>
+        </div>
+        <!-- Top Rated -->
+        <div class="all">
+          <div class="card-title">Top Rated</div>
+          <div class="alls">
+            <center>
+              <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </center>
+          </div>
+        </div>
+      </div>
+
+   <!-- Floating Menu -->
+      <div class="float-menu">
+        <a class="modal-trigger" href="#modal1">
+          <div class="content1 animate__animated animate__bounceIn"><img src="./images/contests.svg">
+            <div class="ContestCount Count" id="contestCount"></div>
+          </div>
+        </a>
+        <div class="prblm-sg content1 svg2 animate__animated animate__bounceIn"><img src="./images/brain.svg">
+        </div>
+        <a target="blank" href="https://telegram.me/cptime_bot">
+          <div class="content1 animate__animated animate__bounceIn"><img src="./images/telegram.svg">
+        </a>
+      </div>
+    </div>
+    <div class="problem-loading">
+      <center>
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </center>
+    </div>
+
+    <!-- Upcoming Contest Modal -->
+    <div id="modal1" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <h5>Upcoming Contests(<span id="contestCount0"></span>)</h5>
+        <div id="allSchedule"></div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
       </div>
     </div>
 
-    <!-- <div class="topThree">
-      <div class="card-title">We have</div>
-    </div> -->
 
-    <div class="all">
-      <div class="card-title">Rating Changes</div>
-      <div id="ratingStatus"></div>
-      <div id="contestName"></div>
-      <div class="ratingChanges">
-
+    <!-- Update Modal -->
+    <div class="update">
+      <div id="updateModal" class="modal modal-fixed-footer updateModal">
+        <div class="modal-content">
+          <h5>Updating<span class="updateCount"></span></h5>
+          <div class="updating">Update Starting...</div>
+          <div class="finishedStatus"></div>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
       </div>
-      
     </div>
 
-    <div class="all">
-      <div class="card-title">Top Rated</div>
-      <div class="alls">
-        <center><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></center>
+    <!-- Submissions Problem Showing Modal -->
+    <div class="myprob">
+      <div id="myProblems" class="modal modal-fixed-footer updateModal">
+        <div class="modal-content">
+          <center>
+            <h4 class="itemTitle"></h4>
+          </center>
+          <div class="problemsList">
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
       </div>
-  </div> 
-</div>
-
-  <div class="float-menu">
-    <a class="modal-trigger" href="#modal1"><div class="content1 animate__animated animate__bounceIn"><img src="./images/contests.svg">
-    <div class="ContestCount Count" id="contestCount"></div>
-    </div></a>
-   <div class="prblm-sg content1 svg2 animate__animated animate__bounceIn"><img src="./images/brain.svg">
-      </div>
-
-      <a target="blank" href="https://telegram.me/cptime_bot"><div class="content1 animate__animated animate__bounceIn"><img src="./images/telegram.svg"></a>
-      </div>
-  </div>
-
-  <div class="problem-loading">
-   <center> <div class="lds-ring"><div></div><div></div><div></div><div></div></div></center>
-  </div>
-
-
-
-
-
-<!-- Modal Structure -->
-<div id="modal1" class="modal modal-fixed-footer">
-  <div class="modal-content">
-    <h5>Upcoming Contests(<span id="contestCount0"></span>)</h5>
-    <div id="allSchedule"></div>
-  </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-  </div>
-</div>
-
-
-<!-- Modal Structure -->
-<div class="update">
-<div id="updateModal" class="modal modal-fixed-footer updateModal">
-  <div class="modal-content">
-    <h5>Updating<span class="updateCount"></span></h5>
-    <div class="updating">Update Starting...</div>
-    <div class="finishedStatus"></div>
-  </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-  </div>
-</div>
-</div>
-
-<div class="myprob">
-<div id="myProblems" class="modal modal-fixed-footer updateModal">
-  <div class="modal-content">
-    <center><h4 class="itemTitle"></h4></center>
-    <div class="problemsList">
-
     </div>
+    <center><small color="gray">#Always be ready to suffer, be ready to survive!</small></center>
   </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-  </div>
-</div>
-</div>
 
-<center><small color="gray">#Always be ready to suffer, be ready to survive!</small></center>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyCIksW_YwVF27gmLzHRCgJ3i4Z60tdkH58",
+      authDomain: "cf-api-f6786.firebaseapp.com",
+      databaseURL: "https://cf-api-f6786.firebaseio.com",
+      projectId: "cf-api-f6786",
+      storageBucket: "cf-api-f6786.appspot.com",
+      messagingSenderId: "762481331047",
+      appId: "1:762481331047:web:24d029333feeaf8cebfdc2",
+      measurementId: "G-7QSJFYTK6X"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    var store = firebase.firestore();
+    var db = firebase.database();
 
-</div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.all.min.js"></script> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
-    <script>
-      var firebaseConfig = {
-    apiKey: "AIzaSyCIksW_YwVF27gmLzHRCgJ3i4Z60tdkH58",
-    authDomain: "cf-api-f6786.firebaseapp.com",
-    databaseURL: "https://cf-api-f6786.firebaseio.com",
-    projectId: "cf-api-f6786",
-    storageBucket: "cf-api-f6786.appspot.com",
-    messagingSenderId: "762481331047",
-    appId: "1:762481331047:web:24d029333feeaf8cebfdc2",
-    measurementId: "G-7QSJFYTK6X"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  var store = firebase.firestore();
-  var db = firebase.database();
-
-    </script>
+  </script>
   <script src="./scripts/script.js"></script>
   <script src="./scripts/db.js"></script>
   <script src="./scripts/contest_schedules.js"></script>
 
-    <script>
-        $(".dark-toggle").on("click", function () {
-          if ($(this).find("i").text() == "brightness_4") {
-            $(this).find("i").text("brightness_high");
-            $('.theme-status').text('');
-          } else {
-            $(this).find("i").text("brightness_4");
-            $('.theme-status').text('');
-          }
-          localStorage.setItem(
-            "mode",
-            (localStorage.getItem("mode") || "dark") === "dark" ? "light" : "dark"
-          );
-          localStorage.getItem("mode") === "dark"
-            ? document.querySelector("body").classList.add("dark")
-            : document.querySelector("body").classList.remove("dark");
-          localStorage.getItem("mode") === "dark"
-            ? document.querySelector("html").classList.add("html-dark")
-            : document.querySelector("html").classList.remove("html-dark");
-        });
-    
-        localStorage.getItem("mode") === "dark"
-          ? document.querySelector("body").classList.add("dark")
-          : document.querySelector("body").classList.remove("dark");
-        localStorage.getItem("mode") === "dark"
-          ? document.querySelector("html").classList.add("html-dark")
-          : document.querySelector("html").classList.remove("html-dark");
-    
-        if (localStorage.getItem('mode') === 'dark') {
-          $('.theme-status').text('');
-          $('.theme-icon-status').text('brightness_high');
-        } else {
-          $('.theme-status').text('');
-          $('.theme-icon-status').text('brightness_4');
-        }
-      </script>
+  <script>
+    $(".dark-toggle").on("click", function () {
+      if ($(this).find("i").text() == "brightness_4") {
+        $(this).find("i").text("brightness_high");
+        $('.theme-status').text('');
+      } else {
+        $(this).find("i").text("brightness_4");
+        $('.theme-status').text('');
+      }
+      localStorage.setItem(
+        "mode",
+        (localStorage.getItem("mode") || "dark") === "dark" ? "light" : "dark"
+      );
+      localStorage.getItem("mode") === "dark"
+        ? document.querySelector("body").classList.add("dark")
+        : document.querySelector("body").classList.remove("dark");
+      localStorage.getItem("mode") === "dark"
+        ? document.querySelector("html").classList.add("html-dark")
+        : document.querySelector("html").classList.remove("html-dark");
+    });
+
+    localStorage.getItem("mode") === "dark"
+      ? document.querySelector("body").classList.add("dark")
+      : document.querySelector("body").classList.remove("dark");
+    localStorage.getItem("mode") === "dark"
+      ? document.querySelector("html").classList.add("html-dark")
+      : document.querySelector("html").classList.remove("html-dark");
+
+    if (localStorage.getItem('mode') === 'dark') {
+      $('.theme-status').text('');
+      $('.theme-icon-status').text('brightness_high');
+    } else {
+      $('.theme-status').text('');
+      $('.theme-icon-status').text('brightness_4');
+    }
+  </script>
 </body>
+
 </html>
