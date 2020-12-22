@@ -245,22 +245,22 @@ body.dark .contestTime {
   font-size: 17px;
 }
 
-.solved,
 .total_sub {
   text-align: center;
   font-size: 17px;
 }
 
 .solved {
-  height: 60px;
-  width: 60px;
+  height: 70px;
+  width: 70px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  /* border: 1px solid var(--success); */
+  font-size: 35px;
   position: relative;
+  color: #28a745;
 }
 
 .solved::after {
