@@ -126,7 +126,7 @@ if (localStorage.getItem("handle") === null) {
             $(".ratingChanged").html(
               `<span style="color: red;">${
                 lastRating.newRating - lastRating.oldRating
-              }</span> <span style="color: gray; font-size: 10px;">(${
+              }</span><small fonr-size="9px">[Rank: ${lastRating.rank}]</small> <span style="color: gray; font-size: 10px;">(${
                 getRelativeTime(d)
               })</span>`
             );
