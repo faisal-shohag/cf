@@ -163,11 +163,15 @@ body.dark .all {
   /* flex-wrap: wrap; */
 }
 
+.onCF{
+ position: absolute;
+ right: 2%;
+ font-size: 9px;
+ color: #e7e7e7;
+ /* font-weight: bold; */
+}
+
 .username {
-  /* position: absolute; */
-  /* top: 0;
-    left: 12%;
-    top: 13%; */
   font-size: 15px;
   font-weight: bold;
 }
@@ -484,6 +488,7 @@ body.dark .contestTime {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   cursor: pointer;
+  position: relative;
 }
 
 .item .avatar {

@@ -6,6 +6,7 @@ db.ref("coders").on("value", (snap) => {
   });
 
   //Get all users informations from CF and sort them according to Rating
+  
   $.get(
     "https://codeforces.com/api/user.info?handles=" + handles,
     function () { }
@@ -17,6 +18,11 @@ db.ref("coders").on("value", (snap) => {
       return b.rating - a.rating;
     });
 
+   function getLastSeen(time){
+      time = new Date(time*1000);
+     return getRelativeTime(time);
+   }
+
     //Showing Top Three users
     var k = 0;
     byRating.forEach((data) => {
@@ -24,6 +30,7 @@ db.ref("coders").on("value", (snap) => {
       if (k < 4) {
         var html = `
       <div class="item" id="${data.handle}">
+      <div class="onCF">Active on CF: <b>${getLastSeen(data.lastOnlineTimeSeconds)}</b></div>
         <div class="avatar" style="border:3px solid ${colorPlatte[data.rank]
           };"><img src="${data.avatar}"></div>
         <div class="info">
@@ -42,6 +49,7 @@ db.ref("coders").on("value", (snap) => {
     byRating.forEach((data) => {
       var html = `
       <div class="item" id="${data.handle}">
+      <div class="onCF">Active on CF: <b>${getLastSeen(data.lastOnlineTimeSeconds)}</b></div>
         <div class="avatar" style="border:3px solid ${colorPlatte[data.rank]
         };"><img src="${data.avatar}"></div>
         <div class="info">
