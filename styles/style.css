@@ -218,6 +218,7 @@ body.dark .contestTime {
   z-index: 99;
   right: 5%;
   top: 2%;
+  z-index: 100;
 }
 
 .login {

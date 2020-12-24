@@ -1,4 +1,4 @@
-localStorage.setItem("mode", "dark");
+// localStorage.setItem("mode", "dark");
 $(".problem-loading").show();
 M.toast({ html: "Welcome To BRUR CP!", classes: "orange" });
 
