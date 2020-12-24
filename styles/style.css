@@ -33,7 +33,7 @@
 }
 
 body {
-  background: #f8f9fa;
+  background: #e6e1e1;
   font-family: Google Sans;
   display: flex;
   justify-content: center;
@@ -166,10 +166,15 @@ body.dark .all {
 
 .onCF{
  position: absolute;
- right: 2%;
+ left: 10.5%;
+ bottom: 10%;
  font-size: 9px;
- color: #e7e7e7;
+ color: #333;
  /* font-weight: bold; */
+}
+
+body.dark .onCF{
+  color: #e7e7e7;
 }
 
 .username {
