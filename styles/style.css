@@ -165,12 +165,8 @@ body.dark .all {
 }
 
 .onCF{
- position: absolute;
- left: 10.5%;
- bottom: 10%;
  font-size: 9px;
  color: #333;
- /* font-weight: bold; */
 }
 
 body.dark .onCF{

@@ -30,7 +30,6 @@ db.ref("coders").on("value", (snap) => {
       if (k < 4) {
         var html = `
       <div class="item" id="${data.handle}">
-      <div class="onCF">Active on CF: <b>${getLastSeen(data.lastOnlineTimeSeconds)}</b></div>
         <div class="avatar" style="border:3px solid ${colorPlatte[data.rank]
           };"><img src="${data.avatar}"></div>
         <div class="info">
@@ -38,6 +37,7 @@ db.ref("coders").on("value", (snap) => {
           }</div>
           <div class="rank" style="color: ${colorPlatte[data.rank]};">${data.rank
           }(${data.rating})</div>
+          <div class="onCF">Active on CF: <b>${getLastSeen(data.lastOnlineTimeSeconds)}</b></div>
         </div>
       </div>
       `;
@@ -49,7 +49,6 @@ db.ref("coders").on("value", (snap) => {
     byRating.forEach((data) => {
       var html = `
       <div class="item" id="${data.handle}">
-      <div class="onCF">Active on CF: <b>${getLastSeen(data.lastOnlineTimeSeconds)}</b></div>
         <div class="avatar" style="border:3px solid ${colorPlatte[data.rank]
         };"><img src="${data.avatar}"></div>
         <div class="info">
@@ -57,6 +56,7 @@ db.ref("coders").on("value", (snap) => {
         }</div>
           <div class="rank" style="color: ${colorPlatte[data.rank]};">${data.rank
         }(${data.rating})</div>
+        <div class="onCF">Active on CF: <b>${getLastSeen(data.lastOnlineTimeSeconds)}</b></div>
         </div>
       </div>
       `;

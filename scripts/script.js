@@ -100,7 +100,7 @@ if (localStorage.getItem("handle") === null) {
         }<b>(<span class="Count">${res.result[0].rating}</span>)</b></span>`
       );
      let lastSeen = new Date(res.result[0].lastOnlineTimeSeconds*1000);
-      $('.LastSeen').html(`Active on CF: ${getRelativeTime(lastSeen)}`)
+      $('.LastSeen').html(`Active on CF: <b>${getRelativeTime(lastSeen)}</b>`)
       $(".you").html(
         `<span style="color: ${colorPlatte[res.result[0].rank]};">You(${
           res.result[0].handle
