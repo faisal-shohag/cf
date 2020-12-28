@@ -82,9 +82,8 @@ db.ref("coders").on("value", (snap) => {
             var lastContestDate = new Date(
               lastRating.ratingUpdateTimeSeconds * 1000
             );
-            //lastContestDate = lastContestDate.toString().split(" ");
+            lastContestDate = lastContestDate.toString().split(" ");
             $(".problem-loading").hide();
-            lastContestDate[1];
             Swal.fire({
               html: `
               <div class="profile-modal">
@@ -96,7 +95,7 @@ db.ref("coders").on("value", (snap) => {
                 }</span>)</b></span></span></div>
               <div><b>Last Contest:</b><a target="blank" href="https://codeforces.com/contest/${lastRating.contestId
                 }"> ${lastRating.contestName}</a><br /> 
-              <div style="color:var(--pink); font-weight: bold; font-size: 17px;"> ${getRelativeTime(lastContestDate)} </div>
+              <div style="color:var(--pink); font-weight: bold; font-size: 17px;"> ${lastContestDate[2]} ${lastContestDate[1]} ${lastContestDate[3]}</div>
               <b>Total Contests: <strong style="color: var(--danger)" class="num">${totalContests1 + 1
                 }</strong><br /> 
               <b>Max Rating: <strong style="color: ${colorByRating(
