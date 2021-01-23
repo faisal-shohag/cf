@@ -348,19 +348,6 @@ $(function () {
    <div class="mle box1" id="mle" style="font-size: 20px; border-top: 2px solid var(--info); color:var(--info)"><span style="font-size: 12px; pading-top: -5px; padding:0;">MLE</span><br>${ME}</div>
    <div class="re box1" id="re" style="font-size: 20px; border-top: 2px solid var(--teal); color:var(--teal)"><span style="font-size: 12px; pading-top: -5px; padding:0;">RE</span><br>${RE}</div>
    `);
-   $(".solveCount").each(function () {
-    var $this = $(this);
-    jQuery({ Counter: 0 }).animate(
-      { Counter: $this.text() },
-      {
-        duration: 2000,
-        easing: "swing",
-        step: function () {
-          $this.text(Math.ceil(this.Counter));
-        },
-      }
-    );
-  });
     $(".box1").click(function () {
       $(".problem-loading").show();
       $(document).ready(function () {
