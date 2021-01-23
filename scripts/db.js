@@ -1,3 +1,11 @@
+
+var COUNT = 0;
+db.ref('visitors').on('value', v=>{
+  COUNT = v.val().count;
+  $('#vcount').html(`<b>${COUNT}</b>`)
+  //console.log(COUNT)
+})
+
 //Take all the cf usernames from firebase realtime database
 db.ref("coders").on("value", (snap) => {
   var handles = "";
@@ -5,12 +13,15 @@ db.ref("coders").on("value", (snap) => {
     handles += item.val().handle + ";";
   });
 
+
+
   //Get all users informations from CF and sort them according to Rating
   
   $.get(
     "https://codeforces.com/api/user.info?handles=" + handles,
     function () { }
   ).done(function (res) {
+    db.ref('visitors').update({count: COUNT+1});
     document.querySelector(".topThrees").innerHTML = "";
     document.querySelector(".alls").innerHTML = "";
     var byRating = res.result.slice(0);
@@ -378,3 +389,5 @@ function RankByRating(rating) {
   else if (rating >= 1200 && rating <= 1399) return "Pupil";
   else return "Newbie";
 }
+
+
